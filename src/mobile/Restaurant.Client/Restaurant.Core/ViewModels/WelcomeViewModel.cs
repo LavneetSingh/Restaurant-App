@@ -12,7 +12,7 @@ namespace Restaurant.Core.ViewModels
         public WelcomeViewModel(INavigationService navigationService)
         {
             GoLogin = ReactiveCommand.CreateFromTask(async () =>
-                await navigationService.NavigateAsync(typeof(ISignInViewModel)));
+                await navigationService.NavigateAsync(typeof(IFoodViewModel)));
 
             GoRegister = ReactiveCommand.CreateFromTask(async () =>
                 await navigationService.NavigateAsync(typeof(ISignUpViewModel)));

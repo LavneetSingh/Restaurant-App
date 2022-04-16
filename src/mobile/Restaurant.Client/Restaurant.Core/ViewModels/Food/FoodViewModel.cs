@@ -15,15 +15,13 @@ namespace Restaurant.Core.ViewModels.Food
                 IsFavorite = !IsFavorite;
             });
         }
-        private Guid _id;
+        private int _id;
         private string _name;
         private string _description;
         private string _picture;
         private decimal _price;
-        private CategoryDto _categoryDto;
-        private string _currency;
 
-        public Guid Id
+        public int Id
         {
             get => _id;
             set => _id = value;
@@ -53,19 +51,6 @@ namespace Restaurant.Core.ViewModels.Food
             set => _price = value;
         }
 
-        public CategoryDto CategoryDto
-        {
-            get => _categoryDto;
-            set => _categoryDto = value;
-        }
-
-
-        public string Currency
-        {
-            get => _currency;
-            set => _currency = value;
-        }
-        
         private bool _isFavorite;
         public bool IsFavorite
         {

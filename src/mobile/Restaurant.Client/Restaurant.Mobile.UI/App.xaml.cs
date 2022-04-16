@@ -1,11 +1,9 @@
 ﻿using Autofac;
-using Microsoft.AppCenter;
-using Microsoft.AppCenter.Analytics;
-using Microsoft.AppCenter.Crashes;
 using Restaurant.Abstractions.Factories;
 using Restaurant.Abstractions.ViewModels;
 using Restaurant.Core;
 using Restaurant.Core.Mappers;
+using Restaurant.Core.ViewModels;
 using Restaurant.Mobile.UI.Pages;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -29,7 +27,9 @@ namespace Restaurant.Mobile.UI
             var container = _platformInitializer.Build();
             var viewFactory = container.Resolve<IViewFactory>();
             var welcomePage = viewFactory.ResolveView<IWelcomeViewModel>() as Page;
-            MainPage = new CustomNavigationPage(welcomePage);
+            var foodsPage = viewFactory.ResolveView<FoodsViewModel>() as Page;
+
+            MainPage = new CustomNavigationPage(foodsPage);
         }
 
         public new static App Current => (App)Application.Current;
@@ -38,11 +38,6 @@ namespace Restaurant.Mobile.UI
         {
             base.OnStart();
 
-            AppCenter.Start("android=afb856fc-388d-4304-8f8e-4156155cc49f;" +
-                            "ios=df01b975-ee7c-4006-8758-34926d7245e6;",
-                             typeof(Analytics), typeof(Crashes));
-
-            AppCenter.LogLevel = LogLevel.Verbose;
         }
     }
 }

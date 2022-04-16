@@ -3,15 +3,13 @@ using Restaurant.Abstractions.DataTransferObjects;
 
 namespace Restaurant.Abstractions.ViewModels
 {
-    public interface IFoodViewModel
+    public interface IFoodViewModel : INavigatableViewModel
     {
-        Guid Id { get; set; }
+        int Id { get; set; }
         string Name { get; set; }
         string Description { get; set; }
         string Picture { get; set; }
         decimal Price { get; set; }
-        CategoryDto CategoryDto { get; set; }
-        string Currency { get; set; }
         bool IsFavorite { get; set; }
     }
 }

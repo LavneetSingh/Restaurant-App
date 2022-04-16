@@ -8,7 +8,9 @@
     <None Remove="Managers\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ReactiveUI" Version="9.19.5" />
-    <PackageReference Include="Refit" Version="4.7.9" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="ReactiveUI" Version="18.0.7" />
+    <PackageReference Include="Refit" Version="6.3.2" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.2" />
   </ItemGroup>
 </Project>

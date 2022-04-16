@@ -88,8 +88,8 @@ namespace Restaurant.Core.ViewModels
 
         public async Task LoadFoods()
         {
-            if (foodsLoaded)
-                return;
+            //if (foodsLoaded)
+            //    return;
 
             try
             {

@@ -14,6 +14,7 @@ using Restaurant.Mobile.UI;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using AColor = Android.Graphics.Color;
+using Xamarin.Essentials;
 
 namespace Restaurant.Droid
 {

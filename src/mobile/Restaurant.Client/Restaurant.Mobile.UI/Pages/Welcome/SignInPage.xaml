@@ -44,7 +44,7 @@
             </StackLayout>
 
             <StackLayout Orientation="Vertical" IsVisible="{Binding IsLoading, Converter={StaticResource InverseBooleanConverter}}" Padding="10" x:Name="loginStack" Scale="0">
-                <controls:AnimateButton BackgroundColor="{StaticResource primaryColor}" Text="Log In"
+                <controls:FlatButton BackgroundColor="{StaticResource primaryColor}" Text="Log In"
                                         HeightRequest="45" Command="{Binding Login}" />
             </StackLayout>
 
@@ -60,10 +60,10 @@
             </Grid>
 
             <StackLayout Padding="10" IsVisible="{Binding IsLoading, Converter={StaticResource InverseBooleanConverter}}">
-                <controls:AnimateButton Margin="5" Text="Sign in with Google" HeightRequest="45"
+                <controls:FlatButton Margin="5" Text="Sign in with Google" HeightRequest="45"
                                         TextColor="{StaticResource grayDark}" BackgroundColor="White"
                                         Image="google.png" />
-                <controls:AnimateButton Margin="5" BorderColor="{StaticResource grayPrimary}"
+                <controls:FlatButton Margin="5" BorderColor="{StaticResource grayPrimary}"
                                         Text="Connect with Facebook" HeightRequest="45" TextColor="White"
                                         Image="facebook.png" BackgroundColor="#3B5998" />
             </StackLayout>

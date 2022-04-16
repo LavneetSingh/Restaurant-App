@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <CollectionView xmlns="http://xamarin.com/schemas/2014/forms"
                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -19,7 +18,7 @@
     </CollectionView.Resources>
 
     <CollectionView.Header>
-        <views:FoodsSearchView />
+        <!--<views:FoodsSearchView/>-->
     </CollectionView.Header>
     <CollectionView.Footer>
         <ActivityIndicator IsRunning="True">
@@ -35,7 +34,7 @@
         <DataTemplate>
             <controls:CardView Padding="{DynamicResource CardPadding}">
                 <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
-                    <Grid HeightRequest="120">
+                    <Grid >
                         <Image x:Name="photoImage" Source="{Binding Picture}" Aspect="AspectFill" />
 
                         <ActivityIndicator VerticalOptions="Center"
@@ -53,13 +52,13 @@
 
                     <StackLayout Padding="10, 10, 10, 3">
                         <StackLayout>
-                            <Label Text="{Binding Name}" FontSize="Medium"
+                            <Label Text="{Binding Name}" FontSize="Large"
                                    TextColor="{StaticResource asphaltDark}"
                                    VerticalOptions="CenterAndExpand" />
 
                             <Label Text="{Binding Description}"
                                    Style="{StaticResource FoodsListDescriptionLabelStyle}"
-                                   FontSize="Micro"
+                                   FontSize="Small"
                                    TextColor="{StaticResource grayPrimary}" />
                         </StackLayout>
 
@@ -71,11 +70,6 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Rs. "
-                                       FontSize="Small"
-                                       TextColor="{StaticResource asphaltPrimary}"
-                                       VerticalOptions="CenterAndExpand" />
-
                                 <Label Text="{Binding Price, StringFormat='{0:C}'}"
                                        FontSize="Small"
                                        TextColor="{StaticResource  asphaltPrimary}"

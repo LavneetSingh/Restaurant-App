@@ -4,7 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Restaurant.Mobile.UI.Views.FoodsSearchView">
     <ContentView.Content>
-        <StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="10">
             <StackLayout.BackgroundColor>
                 <OnPlatform x:TypeArguments="Color">
                     <On Platform="Android" Value="{StaticResource primaryColor}"/>
@@ -39,6 +39,8 @@
                     </OnPlatform>
                 </SearchBar.TextColor>
             </SearchBar>
+            <!--<Button Margin="0,0,0,0" BackgroundColor="{StaticResource yellowDark}" 
+                    Text="&#8634;" Clicked="Button_Clicked" HeightRequest="15" WidthRequest="40"/>-->
         </StackLayout>
     </ContentView.Content>
 </ContentView>
