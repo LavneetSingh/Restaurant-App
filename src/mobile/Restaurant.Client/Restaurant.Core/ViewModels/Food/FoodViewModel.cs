@@ -15,17 +15,9 @@ namespace Restaurant.Core.ViewModels.Food
                 IsFavorite = !IsFavorite;
             });
         }
-        private int _id;
         private string _name;
         private string _description;
-        private string _picture;
         private decimal _price;
-
-        public int Id
-        {
-            get => _id;
-            set => _id = value;
-        }
 
         public string Name
         {
@@ -37,12 +29,6 @@ namespace Restaurant.Core.ViewModels.Food
         {
             get => _description;
             set => _description = value;
-        }
-
-        public string Picture
-        {
-            get => _picture;
-            set => _picture = value;
         }
 
         public decimal Price

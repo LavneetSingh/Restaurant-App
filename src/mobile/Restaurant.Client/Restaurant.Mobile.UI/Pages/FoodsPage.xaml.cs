@@ -24,9 +24,7 @@ namespace Restaurant.Mobile.UI.Pages
 
         protected override async void OnLoaded()
         {
-            lastBatteryLevel = Battery.ChargeLevel * 100.0;
-            experimentStartTime = DateTime.Now;
-            consumptionReport.Add(new Tuple<string, string>("Mode", "MVVM"));
+            ResetExperiment();
             base.OnLoaded();
             await ViewModel.LoadFoods();
         }
@@ -36,6 +34,7 @@ namespace Restaurant.Mobile.UI.Pages
             base.OnLoaded();
             await ViewModel.LoadFoods();
             TakeBatteryReading();
+            refreshButton.Text = Convert.ToString(refreshCount);
         }
         private async Task SaveReport()
         {
@@ -47,6 +46,7 @@ namespace Restaurant.Mobile.UI.Pages
         private void TakeBatteryReading()
         {
             var curCharge = Battery.ChargeLevel * 100.0;
+            refreshCount++;
             if (curCharge < lastBatteryLevel)
             {
                 var duration = (DateTime.Now - experimentStartTime).ToString(@"hh\:mm\:ss");
@@ -58,13 +58,25 @@ namespace Restaurant.Mobile.UI.Pages
         }
         DateTime experimentStartTime;
         double lastBatteryLevel;
-        private readonly List<Tuple<string, string>> consumptionReport = new List<Tuple<string, string>>();
+        int refreshCount;
+        private List<Tuple<string, string>> consumptionReport;
         const string consumptionReportUrl = "uploadconsumptioneport";
         const string baseUrl = "https://rmvrvmbackend.azurewebsites.net/api/CPUIntensiveTasks/";
 
         private async void Button_Clicked_1(object sender, EventArgs e)
         {
+            consumptionReport.Insert(0, new Tuple<string, string>("Mode", "MVVM " + refreshCount));
             await SaveReport();
+            ResetExperiment();
+        }
+
+        private void ResetExperiment()
+        {
+            consumptionReport = new List<Tuple<string, string>>();
+            lastBatteryLevel = Battery.ChargeLevel * 100.0;
+            experimentStartTime = DateTime.Now;
+            refreshCount = 0;
+            refreshButton.Text = Convert.ToString(refreshCount);
         }
     }
 

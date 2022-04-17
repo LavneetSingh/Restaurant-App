@@ -33,25 +33,20 @@ namespace Restaurant.Core.MockData
         {
             new FoodDto
             {
-                Picture = "https://i.imgur.com/vAVUGtZm.jpg",
                 Name = "Hamburger",
                 Description =
                     "A hamburger, beefburger or burger is a sandwich consisting of one or more cooked patties of ground meat, usually beef, placed inside a sliced bread roll or bun. The patty may be pan fried, barbecued, or flame broiled. Hamburgers are often served with cheese, lettuce, tomato, bacon, onion, pickles, or chiles; condiments such as mustard, mayonnaise, ketchup, relish, or \"special sauce\"; and are frequently placed on sesame seed buns. A hamburger topped with cheese is called a cheeseburger.",
                 Price = 50,
-                Id = 1
             },
             new FoodDto
             {
-                Picture = "https://i.imgur.com/IBqp2Bbm.jpg",
                 Name = "Steak",
                 Description =
                     "A steak (/ˈsteɪk/) is a meat generally sliced across the muscle fibers, potentially including a bone. Exceptions, in which the meat is sliced parallel to the fibers, include the skirt steak that is cut from the plate, the flank steak that is cut from the abdominal muscles, and the Silverfinger steak that is cut from the loin and includes three rib bones. When the word \"steak\" is used without qualification, it generally refers to a beefsteak. In a larger sense, there are also fish steaks, ground meat steaks, pork steak and many more varieties of steaks.",
                 Price = 65,
-                Id = 2
             },
             new FoodDto
             {
-                Picture = "https://i.imgur.com/amGnES4m.jpg",
                 Name = "Sushi",
                 Price = 40,
                 Description =

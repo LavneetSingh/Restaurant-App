@@ -4,6 +4,7 @@ using System.IO;
 using System.Threading.Tasks;
 using Refit;
 using Restaurant.Abstractions.DataTransferObjects;
+using Restaurant.Abstractions.ViewModels;
 
 namespace Restaurant.Abstractions.Api
 {

@@ -34,7 +34,7 @@ namespace Restaurant.Core.Services
 
         public void Add(IBasketItemViewModel item)
         {
-            var addedItem = Items.FirstOrDefault(x => x.Food.Id == item.Food.Id);
+            var addedItem = Items.FirstOrDefault(x => x.Food.Name == item.Food.Name);
             if (addedItem != null)
                 addedItem.Quantity += item.Quantity;
             else
