@@ -12,8 +12,7 @@
     <PackageReference Include="Refit" Version="6.3.2" />
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.2" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Restaurant.Abstractions\Restaurant.Abstractions.csproj" />
